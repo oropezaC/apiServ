@@ -5,6 +5,7 @@ const env = require('./config/env')
 const app = express()
 const navApi = require('./routes/ApiNav')
 const URIS = navApi;
+jwt = require('jsonwebtoken')
 
 app.use(bodyParser());
 app.use(cookieParser());

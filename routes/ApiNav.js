@@ -1,6 +1,6 @@
 let routes =[
   {name:"estadistica",endpoint:"/estadistica",require:"./routes/estadisticaApi"},
-  // {name:"clientes",endpoint:"/clientes",require:"./routes/clienteApi"}
+  {name:"login",endpoint:"/login",require:"./routes/loginApi"}
 ]
 
 module.exports = routes;
