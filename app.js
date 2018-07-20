@@ -1,10 +1,19 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const env = require('./config/env')
 const app = express()
 const navApi = require('./routes/ApiNav')
 const URIS = navApi;
+const db = require('./config/database');
+
+env = require('./config/env')
+node_env = process.env.NODE_ENV || 'development';
+
+// PORT = env[node_env].PORT
+
+db.connect()
+
+
 jwt = require('jsonwebtoken')
 
 app.use(bodyParser());
@@ -27,4 +36,4 @@ app.use('*',(req,res)=>{
   res.send("Servicio Arriba")
 })
 
-app.listen(env.port,()=> console.log("listen in port:: " + env.port) )
+app.listen(env[node_env].PORT,()=> console.log("listen in port:: " + env[node_env].PORT) )
